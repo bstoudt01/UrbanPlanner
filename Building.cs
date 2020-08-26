@@ -23,11 +23,17 @@ namespace Planner
         //     }
         // }
         //Address Constructor
-        public Building()
-        {
-            Building aBuilding = new Building();
-            aBuilding._address = "1808 west west SW Circle";
-        }
+        // public void SetAddress(string _address)
+        // {
+        //     address = _address;
+        // }
+        public string address { get; set; }
 
+        public Building(string address)
+        {
+            _address = address;
+            Console.WriteLine(_designer);
+            Console.WriteLine(_address);
+        }
     }
 }
