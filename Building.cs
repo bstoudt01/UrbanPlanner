@@ -15,25 +15,40 @@ namespace Planner
         public double Width { get; set; }
         public double Depth { get; set; }
         //each story is 3 meters high
-        // public string Volume
-        // {
-        //     get
-        //     {
-        //         return $"{Width} * {Depth} * (3 * {Int32.Parse(Stories)})";
-        //     }
-        // }
-        //Address Constructor
-        // public void SetAddress(string _address)
-        // {
-        //     address = _address;
-        // }
+        public double Volume
+        {
+            get
+            {
+                return Width * Depth * (3 * Stories);
+            }
+        }
+        //Date Constructor to set date upon creating new Building instance
+        //invoked in Building method
+        public void Construct() => _dateConstructed = DateTime.Now;
+
+        //Owner Constructor to set date upon creating new Building instance
+        //invoked in Building method with string
+        public void Purchase(string nameOfPurchaser) => _owner = nameOfPurchaser;
+
+        //public variable to allow us to set the private variable via paramaters passed through on new Building
         public string address { get; set; }
 
         public Building(string address)
         {
             _address = address;
-            Console.WriteLine(_designer);
+            Construct();
+        }
+
+        public void ShowBuilding()
+        {
             Console.WriteLine(_address);
+            Console.WriteLine("------------");
+            Console.WriteLine($"Designed by: {_designer}");
+
+            Console.WriteLine($"Constructed on: {_dateConstructed.ToString("F")}");
+            Console.WriteLine($"Owned by: {_owner}");
+            Console.WriteLine($"{Volume} cubic meters of space");
+            Console.WriteLine();
         }
     }
 }
