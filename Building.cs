@@ -8,7 +8,7 @@ namespace Planner
         private string _owner { get; set; }
         private string _designer = "Brett Stoudt";
         private DateTime _dateConstructed { get; set; }
-        private string _address { get; set; }
+        public string _address { get; set; }
 
         //Public Properties
         public int Stories { get; set; }
@@ -30,14 +30,13 @@ namespace Planner
         //invoked in Building method with string
         public void Purchase(string nameOfPurchaser) => _owner = nameOfPurchaser;
 
-        //public variable to allow us to set the private variable via paramaters passed through on new Building
-        public string address { get; set; }
-
         public Building(string address)
         {
             _address = address;
             Construct();
         }
+        //public variable to allow us to set the private variable via paramaters passed through on new Building
+        public string address { get; set; }
 
         public void ShowBuilding()
         {

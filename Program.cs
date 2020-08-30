@@ -27,10 +27,10 @@ namespace Planner
             // Walmart.ShowBuilding();
 
             SpringHill.AddBuilding(aBuilding);
-
+            Console.WriteLine($"Added ABuiding {aBuilding.address}");
             SpringHill.AddBuilding(Walmart);
-
-            // SpringHill.ListBuildings();
+            Console.WriteLine($"Added Walart {Walmart.address}");
+            SpringHill.ListBuildings();
         }
     }
 }
